@@ -1,16 +1,14 @@
 ﻿<Properties StartupConfiguration="{765B7C4B-8FFE-4601-86D2-F0A2C8B3A127}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="Comm.Service/User/UserService.cs">
     <Files>
-      <File FileName="Comm.Service/User/UserService.cs" Line="18" Column="1" />
+      <File FileName="Comm.Service/User/UserService.cs" Line="9" Column="26" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Comm" expanded="True">
-            <Node name="Comm.Service" expanded="True">
-              <Node name="User" expanded="True">
-                <Node name="UserService.cs" selected="True" />
-              </Node>
+            <Node name="Comm.Service" expanded="True" selected="True">
+              <Node name="User" expanded="True" />
             </Node>
           </Node>
         </State>

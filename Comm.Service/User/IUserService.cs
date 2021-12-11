@@ -1,9 +1,10 @@
 using Comm.DB.Entities;
+using Comm.Model;
 
 namespace Comm.Service.User
 {
     public interface IUserService
     {
-        void Register(Person newUser);
+        Common<Model.User.User> Register(Model.User.User newUser);
     }
 }

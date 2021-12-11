@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Comm.API.Controllers
 {
 
-    [Route("api/controller")]
+    [Route("api/[controller]")]
     [ApiController]
     public class UserController : ControllerBase
     {
@@ -20,12 +20,10 @@ namespace Comm.API.Controllers
         }
 
         [HttpPost]
-        public bool Register(User newUser)
+        public IActionResult Register([FromBody] User newUser)
         {
-            var result = false;
-            var mappedUser = mapper.Map<Person>(newUser);
-            userService.Register(mappedUser);
-            return result;
+            userService.Register(newUser);
+            return Ok();
         }
     }
 }

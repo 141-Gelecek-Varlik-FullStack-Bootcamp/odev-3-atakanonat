@@ -1516,7 +1516,9 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
-          "Comm.DB": "1.0.0"
+          "AutoMapper": "10.1.1",
+          "Comm.DB": "1.0.0",
+          "Comm.Model": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Comm.Service.dll": {}
@@ -5809,7 +5811,7 @@
       "outputPath": "/Users/atakanonat/dev/C#/odev-3/Comm.API/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/atakanonat/.config/NuGet/NuGet.Config"
+        "/Users/atakanonat/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"

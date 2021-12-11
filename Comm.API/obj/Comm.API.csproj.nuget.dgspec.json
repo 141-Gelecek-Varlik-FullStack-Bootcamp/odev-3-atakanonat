@@ -14,7 +14,7 @@
         "outputPath": "/Users/atakanonat/dev/C#/odev-3/Comm.API/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/atakanonat/.config/NuGet/NuGet.Config"
+          "/Users/atakanonat/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -85,7 +85,7 @@
         "outputPath": "/Users/atakanonat/dev/C#/odev-3/Comm.DB/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/atakanonat/.config/NuGet/NuGet.Config"
+          "/Users/atakanonat/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -153,7 +153,7 @@
         "outputPath": "/Users/atakanonat/dev/C#/odev-3/Comm.Model/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/atakanonat/.config/NuGet/NuGet.Config"
+          "/Users/atakanonat/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -205,7 +205,7 @@
         "outputPath": "/Users/atakanonat/dev/C#/odev-3/Comm.Service/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/atakanonat/.config/NuGet/NuGet.Config"
+          "/Users/atakanonat/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -219,6 +219,9 @@
             "projectReferences": {
               "/Users/atakanonat/dev/C#/odev-3/Comm.DB/Comm.DB.csproj": {
                 "projectPath": "/Users/atakanonat/dev/C#/odev-3/Comm.DB/Comm.DB.csproj"
+              },
+              "/Users/atakanonat/dev/C#/odev-3/Comm.Model/Comm.Model.csproj": {
+                "projectPath": "/Users/atakanonat/dev/C#/odev-3/Comm.Model/Comm.Model.csproj"
               }
             }
           }
@@ -232,6 +235,12 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[10.1.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

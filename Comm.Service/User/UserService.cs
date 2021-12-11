@@ -1,10 +1,17 @@
 using System.Linq;
+using AutoMapper;
 using Comm.DB.Entities;
+using Comm.Model;
 
 namespace Comm.Service.User
 {
     public class UserService : IUserService
     {
+        private readonly IMapper mapper;
+        public UserService(IMapper _mapper)
+        {
+            mapper = _mapper;
+        }
         public bool Login(string username, string password)
         {
             var result = false;
@@ -16,13 +23,17 @@ namespace Comm.Service.User
             return result;
         }
 
-        public void Register(Person newUser)
+        public Common<Model.User.User> Register(Model.User.User newUser)
         {
+            var result = new Common<Model.User.User>() { IsSuccess = false };
+            var mappedUser = mapper.Map<Person>(newUser);
             using (var srv = new CommContext())
             {
-                srv.Person.Add(newUser);
+                mappedUser.Idate = System.DateTime.Now;
+                srv.Person.Add(mappedUser);
                 srv.SaveChanges();
             }
+            return result;
         }
     }
 }
