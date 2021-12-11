@@ -1,3 +1,4 @@
+using System;
 using Comm.Model.User;
 using Comm.Service.User;
 using Microsoft.AspNetCore.Mvc;
@@ -15,13 +16,6 @@ namespace Comm.API.Controllers
             userService = _userService;
         }
 
-        // [HttpPost]
-        // public Common<Model.User.User> Register([FromBody] User newUser)
-        // {
-        //     var result = userService.Register(newUser);
-        //     return result;
-        // }
-
         [HttpGet]
         public IActionResult RegisterForm()
         {
@@ -29,14 +23,10 @@ namespace Comm.API.Controllers
         }
 
         [HttpPost]
-        public void Register()
+        public IActionResult Register([FromForm] User newUser)
         {
-            User newUser = new User();
-            newUser.Name = Request.Form["User[Name]"];
-            newUser.Username = Request.Form["User[Username]"];
-            newUser.Email = Request.Form["User[Email]"];
-            newUser.Password = Request.Form["User[Password]"];
             var result = userService.Register(newUser);
+            return Redirect("/User");
         }
     }
 }

@@ -7,7 +7,11 @@
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Comm" expanded="True">
-            <Node name="Comm.Service" expanded="True" selected="True">
+            <Node name="Comm.API" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Startup.cs" selected="True" />
+            </Node>
+            <Node name="Comm.Service" expanded="True">
               <Node name="User" expanded="True" />
             </Node>
           </Node>
