@@ -1,5 +1,3 @@
-using AutoMapper;
-using Comm.DB.Entities;
 using Comm.Model.User;
 using Comm.Service.User;
 using Microsoft.AspNetCore.Mvc;
@@ -7,23 +5,38 @@ using Microsoft.AspNetCore.Mvc;
 namespace Comm.API.Controllers
 {
 
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
-    public class UserController : ControllerBase
+    public class UserController : Controller
     {
         private readonly IUserService userService;
-        private readonly IMapper mapper;
-        public UserController(IUserService _userService, IMapper _mapper)
+        public UserController(IUserService _userService)
         {
             userService = _userService;
-            mapper = _mapper;
+        }
+
+        // [HttpPost]
+        // public Common<Model.User.User> Register([FromBody] User newUser)
+        // {
+        //     var result = userService.Register(newUser);
+        //     return result;
+        // }
+
+        [HttpGet]
+        public IActionResult RegisterForm()
+        {
+            return View();
         }
 
         [HttpPost]
-        public IActionResult Register([FromBody] User newUser)
+        public void Register()
         {
-            userService.Register(newUser);
-            return Ok();
+            User newUser = new User();
+            newUser.Name = Request.Form["User[Name]"];
+            newUser.Username = Request.Form["User[Username]"];
+            newUser.Email = Request.Form["User[Email]"];
+            newUser.Password = Request.Form["User[Password]"];
+            var result = userService.Register(newUser);
         }
     }
 }

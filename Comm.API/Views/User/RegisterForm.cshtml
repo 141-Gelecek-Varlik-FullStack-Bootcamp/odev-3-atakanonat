@@ -1,0 +1,27 @@
+@{
+    ViewData["Title"] = "Register";
+}
+
+<body>
+    <form method="post" action="/User">
+        <div class="">
+            <label for="Name">Name:</label>
+            <input type="text" id="Name" name="User[Name]">
+        </div>
+        <div>
+            <label for="Username">Username:</label>
+            <input type="text" id="Username" name="User[Username]">
+        </div>
+        <div>
+            <label for="Email">Email</label>
+            <input type="email" id="Email" name="User[Email]">
+        </div>
+        <div>
+            <label for="Password">Password</label>
+            <input type="password" id="Password" name="User[Password]">
+        </div>
+        <button type="submit">Sign Up</button>
+    </form>
+</body>
+
+</html>

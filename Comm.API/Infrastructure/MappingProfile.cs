@@ -12,6 +12,10 @@ namespace Comm.API.Infrastructure
             CreateMap<User, Person>()
                 .ForMember(m => m.Udate, um => um.MapFrom(src => DateTime.Now));
             CreateMap<Person, User>();
+
+            CreateMap<Model.Product.Product, DB.Entities.Product>()
+                .ForMember(m => m.Udate, um => um.MapFrom(src => DateTime.Now));
+            CreateMap<DB.Entities.Product, Model.Product.Product>();
         }
     }
 }

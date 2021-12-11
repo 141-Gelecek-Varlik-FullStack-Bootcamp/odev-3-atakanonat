@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using AutoMapper;
 using Comm.DB.Entities;
@@ -26,12 +27,21 @@ namespace Comm.Service.User
         public Common<Model.User.User> Register(Model.User.User newUser)
         {
             var result = new Common<Model.User.User>() { IsSuccess = false };
-            var mappedUser = mapper.Map<Person>(newUser);
-            using (var srv = new CommContext())
+            try
             {
-                mappedUser.Idate = System.DateTime.Now;
-                srv.Person.Add(mappedUser);
-                srv.SaveChanges();
+                var mappedUser = mapper.Map<Person>(newUser);
+                using (var srv = new CommContext())
+                {
+                    mappedUser.Idate = System.DateTime.Now;
+                    srv.Person.Add(mappedUser);
+                    srv.SaveChanges();
+                    result.Entity = mapper.Map<Model.User.User>(mappedUser);
+                    result.IsSuccess = true;
+                }
+            }
+            catch (Exception e)
+            {
+                result.ExceptionMessage = "Unexpected error occurred!";
             }
             return result;
         }

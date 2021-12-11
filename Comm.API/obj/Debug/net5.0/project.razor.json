@@ -15619,6 +15619,11 @@
   "RootNamespace": "Comm.API",
   "Documents": [
     {
+      "FilePath": "/Users/atakanonat/dev/C#/odev-3/Comm.API/Views/User/RegisterForm.cshtml",
+      "TargetPath": "Views\\User\\RegisterForm.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/atakanonat/dev/C#/odev-3/Comm.API/Views/Shared/_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"

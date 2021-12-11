@@ -4,5 +4,6 @@ namespace Comm.Model
     {
         public bool IsSuccess { get; set; }
         public T Entity { get; set; }
+        public string ExceptionMessage { get; set; }
     }
 }

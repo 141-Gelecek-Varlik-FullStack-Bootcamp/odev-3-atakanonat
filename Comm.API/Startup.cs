@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using Comm.API.Infrastructure;
+using Comm.Service.Product;
 using Comm.Service.User;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -29,6 +30,7 @@ namespace Comm.API
             var _mappingProfile = new MapperConfiguration(mp => mp.AddProfile(new MappingProfile()));
             var _mapper = _mappingProfile.CreateMapper();
             services.AddTransient<IUserService, UserService>();
+            services.AddTransient<IProductService, ProductService>();
             services.AddSingleton(_mapper);
             services.AddControllersWithViews();
         }
