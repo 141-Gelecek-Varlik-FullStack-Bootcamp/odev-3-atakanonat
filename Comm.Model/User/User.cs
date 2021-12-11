@@ -8,7 +8,7 @@ namespace Comm.Model.User
         [StringLength(maximumLength: 50, ErrorMessage = "Minimum 3 and maximum 50 characters allowed.", MinimumLength = 3)]
         public string Name { get; set; }
 
-        [Required(ErrorMessage = "Please provide your username.")]
+        [Required(ErrorMessage = "Please provide an username.")]
         [StringLength(maximumLength: 50, ErrorMessage = "Minimum 3 and maximum 50 characters allowed.", MinimumLength = 3)]
         public string Username { get; set; }
 

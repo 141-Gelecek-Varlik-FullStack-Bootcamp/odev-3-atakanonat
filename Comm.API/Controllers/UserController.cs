@@ -16,17 +16,34 @@ namespace Comm.API.Controllers
             userService = _userService;
         }
 
-        [HttpGet]
+        [HttpGet("/[controller]/register")]
         public IActionResult RegisterForm()
         {
             return View();
         }
 
-        [HttpPost]
+        [HttpPost("/[controller]/register")]
         public IActionResult Register([FromForm] User newUser)
         {
             var result = userService.Register(newUser);
-            return Redirect("/User");
+            return Redirect("/User/login");
+        }
+
+        [HttpGet("/[controller]/login")]
+        public IActionResult LoginForm()
+        {
+            return View();
+        }
+
+        [HttpPost("/[controller]/login")]
+        public IActionResult Login([FromForm] UserLogin user)
+        {
+            var result = userService.Login(user);
+            if (result)
+            {
+                return Redirect("/");
+            }
+            return Redirect("/User/login");
         }
     }
 }

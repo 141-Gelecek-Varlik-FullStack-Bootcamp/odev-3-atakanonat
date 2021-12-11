@@ -15654,6 +15654,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/atakanonat/dev/C#/odev-3/Comm.API/Views/User/LoginForm.cshtml",
+      "TargetPath": "Views\\User\\LoginForm.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/atakanonat/dev/C#/odev-3/Comm.API/Views/Shared/Error.cshtml",
       "TargetPath": "Views\\Shared\\Error.cshtml",
       "FileKind": "mvc"

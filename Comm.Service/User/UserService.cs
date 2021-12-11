@@ -13,14 +13,20 @@ namespace Comm.Service.User
         {
             mapper = _mapper;
         }
-        public bool Login(string username, string password)
+        public bool Login(Model.User.UserLogin registeredUser)
         {
-            var result = false;
+            bool result = false;
             using (var srv = new CommContext())
             {
-                result = srv.Person.Any(user => !user.IsDeleted && user.Username == username && user.Password == password);
+                bool isFound = srv.Person.Any(
+                    user => !user.IsDeleted &&
+                    user.Username == registeredUser.Username &&
+                    user.Password == registeredUser.Password);
+                if (isFound)
+                {
+                    result = true;
+                }
             }
-
             return result;
         }
 

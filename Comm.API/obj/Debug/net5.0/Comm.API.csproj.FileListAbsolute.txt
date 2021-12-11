@@ -75,3 +75,4 @@
 /Users/atakanonat/dev/C#/odev-3/Comm.API/obj/Debug/net5.0/Comm.API.pdb
 /Users/atakanonat/dev/C#/odev-3/Comm.API/obj/Debug/net5.0/Comm.API.genruntimeconfig.cache
 /Users/atakanonat/dev/C#/odev-3/Comm.API/obj/Debug/net5.0/Razor/Views/User/RegisterForm.cshtml.g.cs
+/Users/atakanonat/dev/C#/odev-3/Comm.API/obj/Debug/net5.0/Razor/Views/User/LoginForm.cshtml.g.cs
